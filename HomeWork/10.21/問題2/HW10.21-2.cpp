@@ -1,7 +1,7 @@
 #include <iostream>
 #include "calc.h"
 using namespace std;
-/*
+
 int main()
 {
 	int a, b;
@@ -11,4 +11,3 @@ int main()
 	cin >> b;
 	cout << sum(a, b) << endl;
 }
-*/
