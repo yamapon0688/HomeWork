@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-/*
+
 static int multi(int a, int b);
 
 int main()

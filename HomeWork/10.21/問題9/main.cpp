@@ -2,7 +2,7 @@
 #include "janken.h"
 #include "kazuate.h"
 using namespace std;
-/*
+
 enum Game
 {
 	JANKEN = 1,
