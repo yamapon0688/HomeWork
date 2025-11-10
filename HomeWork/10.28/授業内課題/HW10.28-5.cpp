@@ -40,13 +40,12 @@ void control(int* pPos, int* mapType)
 	};
 
 	mapA[startPPos[Y]][startPPos[X]] = 'p';
-	char (*currentMap)[MAP_WIDTH]; // char (*変数名)[サイズ];
+	char (*currentMap)[MAP_WIDTH];
 	int gCount = 0;
 	bool GOAL = false;
 	while (true)
 	{
 		
-		// 現在のマップタイプに応じてポインタを設定
 		if (*mapType == 1) {
 			currentMap = mapA;
 		}
