@@ -1,4 +1,5 @@
 #include <iostream>
+#include "janken.h"
 using namespace std;
 
 enum Check
@@ -8,7 +9,8 @@ enum Check
 	RESULT_DRAW = 2,
 	ERROR = -1
 };
-Check check(char a, char b)
+
+static Check check(char a, char b)
 {
 	if ((a == 'g' && b == 't') || (a == 't' && b == 'p') || (a == 'p' && b == 'g'))
 	{

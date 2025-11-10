@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <cstring>
 using namespace std;
-
+/*
 const char* str_match(const char* s1, const char* s2)
 {
 	for (const char* arr = s1; !(*arr == '\0'); arr++)
@@ -12,6 +12,10 @@ const char* str_match(const char* s1, const char* s2)
 		{
 			arrs1++;
 			arrs2++;
+		}
+		if (*arrs1 == '\0' && *arrs2 == '\0')
+		{
+			return arr;
 		}
 		if (*arrs2 == '\0')
 		{
@@ -39,3 +43,4 @@ int main()
 		cout << arr << endl;
 	}
 }
+*/
