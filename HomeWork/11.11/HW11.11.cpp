@@ -5,6 +5,7 @@
 #define Q_TIME 10
 #define BACKSPACE 8
 #define ENTER 13
+#define RESET -1
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
