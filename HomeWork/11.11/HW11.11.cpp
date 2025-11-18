@@ -7,9 +7,9 @@
 #define ENTER 13
 #include <stdio.h>
 #include<stdlib.h>
-#include <cstring>
+#include <string.h>
 #include<conio.h>
-#include<time.h>;
+#include<time.h>
 #include<windows.h>
 
 static int score = 0;
@@ -86,7 +86,7 @@ void game()
 		}
 		rArr[i] = r;
 		sTimer;
-		printf("\n%d / %d –â–Ú\n", i + 1, Q_CMAX);
+		printf("%d / %d –â–Ú\n", i + 1, Q_CMAX);
 		printf("%s\n", q[r]);
 		inpLen = 0;
 		input[0] = '\0';
@@ -121,7 +121,7 @@ void game()
 			if (cTimer - sTimer > Q_TIME)
 			{
 				printf("ŠÔØ‚ê");
-				return;
+				break;
 			}
 			Sleep(50);
 		}
@@ -140,10 +140,6 @@ bool cmpRand(int i, int r, const int* rArr) // ‘O‚Ìƒ‹[ƒv‚Åo‚Ä‚«‚½–â‘è‚©ƒ`ƒFƒbƒ
 		if (r == rArr[j])
 		{
 			return true;
-		}
-		else
-		{
-
 		}
 	}
 	return false;
