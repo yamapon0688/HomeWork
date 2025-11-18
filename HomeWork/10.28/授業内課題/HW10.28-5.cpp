@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+/*
 void control(int* pPos, int* mapType);
 enum index
 {
@@ -32,20 +33,20 @@ void control(int* pPos, int* mapType)
 	char mapB[MAP_HEIGHT][MAP_WIDTH] =
 	{
 		{"########"},
-		{"#W #G  #"},
+		{"#  #G  #"},
 		{"#   #  #"},
 		{"# #    #"},
-		{"#      #"},
+		{"# W    #"},
 		{"########"}
 	};
 
 	mapA[startPPos[Y]][startPPos[X]] = 'p';
-	char (*currentMap)[MAP_WIDTH];
+	char (*currentMap)[MAP_WIDTH]; ;
 	int gCount = 0;
 	bool GOAL = false;
+	bool WARP = false;
 	while (true)
 	{
-		
 		if (*mapType == 1) {
 			currentMap = mapA;
 		}
@@ -76,6 +77,7 @@ void control(int* pPos, int* mapType)
 		char input;
 		cout << "WASD > " << flush;
 		cin >> input;
+		
 		if (input == 'w')
 		{
 			if (currentMap[pPos[Y] - 1][pPos[X]] == '#')
@@ -102,11 +104,19 @@ void control(int* pPos, int* mapType)
 					*mapType = 1;
 					mapA[pPos[Y]][pPos[X]] = 'p';
 				}
+				WARP = true;
 				continue;
 			}
-
+			if (WARP)
+			{
+				currentMap[pPos[Y]][pPos[X]] = 'W';
+				WARP = false;
+			}
+			else
+			{
+				currentMap[pPos[Y]][pPos[X]] = ' ';
+			}
 			currentMap[pPos[Y] - 1][pPos[X]] = 'p';
-			currentMap[pPos[Y]][pPos[X]] = ' ';
 			pPos[Y]--;
 		}
 		if (input == 's')
@@ -135,10 +145,19 @@ void control(int* pPos, int* mapType)
 					*mapType = 1;
 					mapA[pPos[Y]][pPos[X]] = 'p';
 				}
+				WARP = true;
 				continue;
 			}
+			if (WARP)
+			{
+				currentMap[pPos[Y]][pPos[X]] = 'W';
+				WARP = false;
+			}
+			else
+			{
+				currentMap[pPos[Y]][pPos[X]] = ' ';
+			}
 			currentMap[pPos[Y] + 1][pPos[X]] = 'p';
-			currentMap[pPos[Y]][pPos[X]] = ' ';
 			pPos[Y]++;
 		}
 		if (input == 'a')
@@ -167,10 +186,19 @@ void control(int* pPos, int* mapType)
 					*mapType = 1;
 					mapA[pPos[Y]][pPos[X]] = 'p';
 				}
+				WARP = true;
 				continue;
 			}
+			if (WARP)
+			{
+				currentMap[pPos[Y]][pPos[X]] = 'W';
+				WARP = false;
+			}
+			else
+			{
+				currentMap[pPos[Y]][pPos[X]] = ' ';
+			}
 			currentMap[pPos[Y]][pPos[X] - 1] = 'p';
-			currentMap[pPos[Y]][pPos[X]] = ' ';
 			pPos[X]--;
 		}
 		
@@ -200,11 +228,21 @@ void control(int* pPos, int* mapType)
 					*mapType = 1;
 					mapA[pPos[Y]][pPos[X]] = 'p';
 				}
+				WARP = true;
 				continue;
 			}
+			if (WARP)
+			{
+				currentMap[pPos[Y]][pPos[X]] = 'W';
+				WARP = false;
+			}
+			else
+			{
+				currentMap[pPos[Y]][pPos[X]] = ' ';
+			}
 			currentMap[pPos[Y]][pPos[X] + 1] = 'p';
-			currentMap[pPos[Y]][pPos[X]] = ' ';
 			pPos[X]++;
 		}
 	}
 }
+*/
