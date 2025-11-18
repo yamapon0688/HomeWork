@@ -125,6 +125,7 @@ void game()
 			}
 			Sleep(50);
 		}
+		printf("\n");
 		cmp(input, ans[r]);
 		if (i + 1 == Q_CMAX || !retry())
 		{
