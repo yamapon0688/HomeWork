@@ -173,10 +173,6 @@ bool retry() // ƒŠƒgƒ‰ƒC‚·‚é‚©‚Ç‚¤‚©
 		{
 			return false;
 		}
-		else
-		{
-
-		}
 	}
 }
 void result(int qCount, int score) // Œ‹‰Ê‚ð•\Ž¦
