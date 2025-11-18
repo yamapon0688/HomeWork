@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+/*
 int str2int(const char* s)
 {
 	int result = 0;
@@ -27,3 +27,4 @@ int main()
 	cin >> strInt;
 	cout << str2int(strInt) << endl;
 }
+*/

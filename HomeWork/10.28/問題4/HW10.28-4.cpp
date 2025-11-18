@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+/*
 void swap_ptr(char*& pStr1, char*& pStr2)
 {
 	char* swap = pStr1;
@@ -26,3 +26,4 @@ int main()
 	cout << pStr1 << endl; 
 	cout << pStr2 << endl; 
 }
+*/

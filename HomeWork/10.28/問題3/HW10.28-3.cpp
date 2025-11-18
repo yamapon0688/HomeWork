@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+/*
 double str2double(const char* s)
 {
 	double result = 0.0;
@@ -40,3 +40,4 @@ int main()
 	cin >> strDouble;
 	cout << str2double(strDouble) << endl;
 }
+*/
