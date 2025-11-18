@@ -32,7 +32,7 @@ void game()
 	int i = 0;
 	srand((unsigned int)time(NULL));
 
-	const char q[Q_MAX][LEN_MAX] =
+	const char* q[Q_MAX] =
 	{
 		{ "2020年に発売され、ヒットしたNintendo Switchのゲーム「〇〇〇〇 どうぶつの森」。〇〇〇〇に入る言葉は？"},
 		{ "2010年代にスマートフォンでヒットしたソーシャルゲーム「パズドラ」の正式名称は？" },
@@ -45,7 +45,7 @@ void game()
 		{"「10010（2進数）」の10進数は？"},
 		{"5 × 6 ＋ 8 ÷ 2 = ？"}
 	};
-	const char ans[Q_MAX][LEN_MAX] =
+	const char* ans[Q_MAX]=
 	{
 		{ "あつまれ"},
 		{"パズル＆ドラゴンズ"},
