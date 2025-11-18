@@ -6,11 +6,11 @@
 #define BACKSPACE 8
 #define ENTER 13
 #include <stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
 #include <string.h>
-#include<conio.h>
-#include<time.h>
-#include<windows.h>
+#include <conio.h>
+#include <time.h>
+#include <windows.h>
 
 static int score = 0;
 void game();
