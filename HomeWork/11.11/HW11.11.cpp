@@ -5,6 +5,7 @@
 #define Q_TIME 10
 #define BACKSPACE 8
 #define ENTER 13
+#define LEN_MAX 256
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -31,7 +32,7 @@ void game()
 	int i = 0;
 	srand((unsigned int)time(NULL));
 
-	const char q[Q_MAX][256] =
+	const char q[Q_MAX][LEN_MAX] =
 	{
 		{ "2020年に発売され、ヒットしたNintendo Switchのゲーム「〇〇〇〇 どうぶつの森」。〇〇〇〇に入る言葉は？"},
 		{ "2010年代にスマートフォンでヒットしたソーシャルゲーム「パズドラ」の正式名称は？" },
@@ -44,7 +45,7 @@ void game()
 		{"「10010（2進数）」の10進数は？"},
 		{"5 × 6 ＋ 8 ÷ 2 = ？"}
 	};
-	const char ans[Q_MAX][256] =
+	const char ans[Q_MAX][LEN_MAX] =
 	{
 		{ "あつまれ"},
 		{"パズル＆ドラゴンズ"},
@@ -59,7 +60,7 @@ void game()
 	};
 	time_t sTimer;
 	time_t cTimer;
-	char input[256];
+	char input[LEN_MAX];
 	char inpChar = '\0';
 	int inpLen;
 	int r;
@@ -114,7 +115,7 @@ void game()
 					}
 					else
 					{
-						if (inpLen < 256)
+						if (inpLen < LEN_MAX)
 						{
 							input[inpLen] = inpChar;
 							inpLen++;
