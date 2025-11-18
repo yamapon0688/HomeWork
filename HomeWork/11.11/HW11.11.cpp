@@ -5,6 +5,7 @@
 #define Q_TIME 10
 #define BACKSPACE 8
 #define ENTER 13
+#define RESET -1
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -130,11 +131,18 @@ void game()
 		}
 		printf("\n");
 		cmp(input, ans[r]);
-		if (i + 1 == Q_CMAX || !retry())
+		if (i + 1 == Q_CMAX)
 		{
 			result(i + 1, score);
+			if (retry())
+			{
+				i = RESET;
+				rArr[0] = '\0';
+				continue;
+			}
 			return;
 		}
+		Sleep(3000);
 	}
 }
 bool cmpRand(int i, int r, const int* rArr) // 前のループで出てきた問題かチェック
