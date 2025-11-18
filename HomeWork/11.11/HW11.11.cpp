@@ -7,9 +7,9 @@
 #define ENTER 13
 #include <stdio.h>
 #include<stdlib.h>
-#include <cstring>
+#include <string.h>
 #include<conio.h>
-#include<time.h>;
+#include<time.h>
 #include<windows.h>
 
 static int score = 0;
@@ -121,7 +121,7 @@ void game()
 			if (cTimer - sTimer > Q_TIME)
 			{
 				printf("ŠÔØ‚ê");
-				return;
+				break;
 			}
 			Sleep(50);
 		}
