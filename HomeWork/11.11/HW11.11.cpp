@@ -64,76 +64,85 @@ void game()
 	int inpLen;
 	int r;
 	int rArr[Q_CMAX];
-	for (i = 0; i < Q_CMAX; i++)
+	while (true)
 	{
-		
-		clear();
-		sTimer = time(NULL);
-		while (true)
+		for (i = 0; i < Q_CMAX; i++)
 		{
-			r = rand() % Q_MAX;
-			if (i > 0)
+			clear();
+			sTimer = time(NULL);
+			while (true)
 			{
-				if (!cmpRand(i, r, rArr))
+				r = rand() % Q_MAX;
+				if (i > 0)
 				{
-					break;
-				}
-			}
-			else
-			{
-				break;
-			}
-		}
-		rArr[i] = r;
-		sTimer;
-		printf("%d / %d 問目\n", i + 1, Q_CMAX);
-		printf("%s\n", q[r]);
-		inpLen = 0;
-		input[0] = '\0';
-		
-		while (true)
-		{
-			cTimer = time(NULL);
-			cursor(4); // ↓4行目以降
-			printf("%s", input);
-			if (kbhit()) // キーが押されたら
-			{
-				inpChar = getch();
-				if (inpChar == BACKSPACE)
-				{
-					if (inpLen > 0)
+					if (!cmpRand(i, r, rArr))
 					{
-						inpLen--;
-						input[inpLen] = '\0';
+						break;
 					}
-				}
-				else if (inpChar == ENTER)
-				{
-					break;
 				}
 				else
 				{
-					if (inpLen < 256)
-					{
-						input[inpLen] = inpChar;
-						inpLen++;
-						input[inpLen] = '\0';
-					}
+					break;
 				}
 			}
-			if (cTimer - sTimer > Q_TIME)
+			rArr[i] = r;
+			sTimer;
+			printf("%d / %d 問目\n", i + 1, Q_CMAX);
+			printf("%s\n", q[r]);
+			inpLen = 0;
+			input[0] = '\0';
+
+			while (true)
 			{
-				printf("時間切れ");
-				break;
+				cTimer = time(NULL);
+				cursor(4); // ↓4行目以降
+				printf("%s", input);
+				if (kbhit()) // キーが押されたら
+				{
+					inpChar = getch();
+					if (inpChar == BACKSPACE)
+					{
+						if (inpLen > 0)
+						{
+							inpLen--;
+							input[inpLen] = '\0';
+						}
+					}
+					else if (inpChar == ENTER)
+					{
+						break;
+					}
+					else
+					{
+						if (inpLen < 256)
+						{
+							input[inpLen] = inpChar;
+							inpLen++;
+							input[inpLen] = '\0';
+						}
+					}
+				}
+				if (cTimer - sTimer > Q_TIME)
+				{
+					printf("\n時間切れ");
+					break;
+				}
+				Sleep(50);
 			}
-			Sleep(50);
-		}
-		printf("\n");
-		cmp(input, ans[r]);
-		if (i + 1 == Q_CMAX || !retry())
-		{
-			result(i + 1, score);
-			return;
+			printf("\n");
+			cmp(input, ans[r]);
+			if (i + 1 == Q_CMAX)
+			{
+				result(i + 1, score);
+				if (retry())
+				{
+					score = 0;
+					rArr[0] = '\0';
+					break;
+				}
+				return;
+			}
+			Sleep(3000);
 		}
 	}
 }
@@ -192,7 +201,7 @@ void result(int qCount, int score) // 結果を表示
 	};
 
 	printf("\n%d 問中%d 問正解", qCount, score);
-	printf("\n%s", resultStr[score]);
+	printf("\n%s\n", resultStr[score]);
 }
 void cursor(int y)
 {
